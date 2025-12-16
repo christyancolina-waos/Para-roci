@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi linda Rocí 💖</title>
+    <style>
+        /* RESET Y ESTILOS BÁSICOS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: #fce4ec;
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* CABECERA */
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: #e91e63;
+            color: white;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .header .date {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CONTENIDO PRINCIPAL */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        /* COLUMNA DE FOTOS */
+        .photos {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .photo-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            aspect-ratio: 1;
+            background: #f5f5f5;
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .photo-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(233, 30, 99, 0.9);
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        /* COLUMNA DE TEXTO */
+        .letter {
+            flex: 2;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .saludo {
+            color: #e91e63;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .message {
+            margin-bottom: 30px;
+        }
+        
+        .message p {
+            margin-bottom: 20px;
+            text-align: justify;
+            padding: 10px;
+            border-left: 3px solid #ffb6c1;
+            background: #fff9fb;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #e91e63;
+        }
+        
+        .signature .name {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2.5rem;
+            color: #e91e63;
+            margin-top: 10px;
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #ffb6c1;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .letter {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- CABECERA -->
+        <div class="header">
+            <h1>Para mi linda Rocí</h1>
+            <div class="date">Caracas, Diciembre de 2025 - 3 semanas juntos</div>
+        </div>
+        
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="main-content">
+            <!-- COLUMNA DE FOTOS -->
+            <div class="photos">
+                <div class="photo-grid">
+                    <!-- Foto 1 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1nZqkeRogHC-ua7r875TcGHj3qRbh5XOa" 
+                             alt="Recuerdo 1"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 1</div>
+                    </div>
+                    
+                    <!-- Foto 2 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1S8T4E7DRoIPqDbMzE8qwpItd9Bf2mtL1" 
+                             alt="Recuerdo 2"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 2</div>
+                    </div>
+                    
+                    <!-- Foto 3 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1fFMGeSHKz6P56JM2dKndCzKEBJZ263zF" 
+                             alt="Recuerdo 3"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 3</div>
+                    </div>
+                    
+                    <!-- Foto 4 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1-1jtem0XqQkppiDPaBpSvSwW1fn6yhdk" 
+                             alt="Recuerdo 4"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 4</div>
+                    </div>
+                    
+                    <!-- Foto 5 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1Xkr2StY4MxoByMU-a5fPwY3zXRNwyBBX" 
+                             alt="Recuerdo 5"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 5</div>
+                    </div>
+                    
+                    <!-- Foto 6 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1E5cUZzuvDtQ2J5YXBcobDzDYB0zhz9BZ" 
+                             alt="Recuerdo 6"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 6</div>
+                    </div>
+                    
+                    <!-- Foto 7 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=199n3qiB_SObrhRnlbV1v61jmEyktZunZ" 
+                             alt="Recuerdo 7"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 7</div>
+                    </div>
+                    
+                    <!-- Foto 8 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1L6vE79px6HO6x3kfWspHOuGwpGiFCkGs" 
+                             alt="Recuerdo 8"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 8</div>
+                    </div>
+                    
+                    <!-- Foto 9 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1TzhCwPhHmplCFb2XRUckxi-KExugCS7y" 
+                             alt="Recuerdo 9"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 9</div>
+                    </div>
+                    
+                    <!-- Foto 10 -->
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1qOkqHZEua52KkIHb3YuKB5HtDKIX_Fkb" 
+                             alt="Recuerdo 10"
+                             loading="lazy">
+                        <div class="photo-label">Recuerdo 10</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- COLUMNA DE TEXTO -->
+            <div class="letter">
+                <div class="saludo">Amorcito,</div>
+                
+                <div class="message">
+                    <p>
+                        Me parece increíble que ya hayan pasado tres maravillosas semanas de habernos conocido, de haber empezado esta pequeña gran aventura juntos. Parece que fue hace poco, pero a la vez, siento que te conozco de casi toda la vida. Tres semanas pueden parecer poco, pero para mí, cada día ha sido como un capítulo nuevo en esta maravillosa historia que tenemos juntos, historia que para mí es como el tesoro más preciado que tengo.
+                    </p>
+                    
+                    <p>
+                        Desde el momento en el que charlamos por primera vez sentí muchas cosas, entre ellas incertidumbre y nervios por no saber qué podría suceder, no sabía qué tipo de persona eras, pero con el tiempo, mientras seguimos conversando me dí cuenta de algo, me dí cuenta de lo muy especial que eres y la increíble persona la cual me encontré. Algunas de las cosas que me han mantenido enganchado este tiempo han sido lo increíblemente graciosa y divertida que eres, la forma en la que te expresas y tu cariño, que aunque ciertamente no lo sueles demostrar tanto, cuándo lo haces se convierte en un momento muy especial el cuál no voy a olvidar.
+                    </p>
+                    
+                    <p>
+                        Hay algo sobre estos días que jamás olvidaré, cuando estuve contigo el día en el que todo fue para mal con Celeste y empezaste a darme mucho cariño, de verdad no sabes lo muy feliz que me hizo sentir ese momento. O la vez cuando me dijiste "Y yo te aviso desde ahora, vos sos mi esclavo. No de alguien más, ni de tus amigos ni nada" Probablemente sea raro mencionarlo ahora, pero lo que quiero decir es que tienes algo muy encantador cuando te vuelves un poco posesiva.
+                    </p>
+                    
+                    <p>
+                        Gracias por haberme dado la oportunidad de pasar este tiempo contigo, estando para ti y aprendiendo más sobre ti, sobre la increíble mujer que me tiene tan enamorado. Contigo me siento inimaginablemente feliz y me siento muy emocionado por todo lo que nos espera. Espero celebrar muchas más semanas, meses y años a tu lado amándote, apoyándote y siempre estando para ti cuando más me necesites.
+                    </p>
+                    
+                    <p>
+                        Te amo como no puedes imaginar.
+                    </p>
+                </div>
+                
+                <div class="signature">
+                    <div>Con todo mi amor,</div>
+                    <div class="name">galletón</div>
+                    <div>Diciembre 2025</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <div>💖 Creado con mucho cariño para Rocí - 3 semanas de felicidad juntos 💖</div>
+            <div style="margin-top: 10px; font-size: 12px; opacity: 0.7;">
+                Nuestros primeros 10 recuerdos juntos
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Script simple para verificar que las imágenes cargan
+        console.log('💖 Carta para Rocí cargada');
+        
+        // Verificar imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            let loaded = 0;
+            const total = images.length;
+            
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    loaded++;
+                    console.log(`✅ Imagen ${loaded}/${total} cargada: ${this.alt}`);
+                    
+                    if (loaded === total) {
+                        console.log('🎉 ¡Todas las imágenes cargadas correctamente!');
+                    }
+                });
+                
+                img.addEventListener('error', function() {
+                    console.warn(`❌ Error cargando: ${this.alt}`);
+                    this.style.border = '2px solid red';
+                    this.parentElement.style.backgroundColor = '#ffe6e6';
+                });
+            });
+            
+            // Efecto simple al hacer clic en fotos
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
