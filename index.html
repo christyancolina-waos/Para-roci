@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi linda Rocí: 3 Semanas</title>
+    <style>
+        /* --- Estilos Generales --- */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fce4ec; /* Rosa muy claro */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Contenedor Principal */
+        .main-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        /* --- Estilos de la CARTA (Centro) --- */
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+            border-top: 5px solid #e91e63;
+            flex-shrink: 0; 
+        }
+
+        /* --- Estilos de las COLUMNAS DE FOTOS --- */
+        .sidebar {
+            display: flex;
+            flex-direction: column; /* En PC: Vertical */
+            gap: 15px;
+            width: 220px; /* Ancho fijo en PC */
+            flex-shrink: 0;
+        }
+
+        /* Estilo de cada IMAGEN */
+        .sidebar img {
+            width: 100%;
+            height: 180px; /* Altura fija para uniformidad */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar img:hover {
+             transform: scale(1.03);
+        }
+
+        /* Estilos de texto */
+        .header { text-align: center; margin-bottom: 25px; }
+        .header h1 { color: #e91e63; font-family: 'Playfair Display', serif; font-size: 1.8em; margin: 0; }
+        .header p { font-style: italic; color: #888; font-size: 0.9em; }
+        .saludo { font-size: 1.2em; margin-bottom: 20px; font-weight: bold; color: #e91e63; }
+        .cuerpo p { margin-bottom: 15px; text-indent: 0; text-align: justify;}
+        .firma { margin-top: 30px; text-align: right; }
+        .firma p { font-weight: bold; font-size: 1.1em; color: #e91e63; }
+
+        /* --- MODO CELULAR (Responsive) --- */
+        @media (max-width: 1000px) {
+            .main-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 25px;
+                order: 2;
+            }
+
+            /* Las barras laterales ahora son horizontales (fotos 2x2) */
+            .sidebar {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            /* Orden específico para celular */
+            .sidebar.left { order: 1; }
+            .sidebar.right { order: 3; }
+
+            /* Ajuste de tamaño de fotos en celular */
+            .sidebar img {
+                width: calc(50% - 15px);
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        
+        <div class="sidebar left">
+            <img src="1.jpg" alt="Recuerdo 1">
+            <img src="2.jpg" alt="Recuerdo 2">
+            <img src="3.jpg" alt="Recuerdo 3">
+            <img src="4.jpg" alt="Recuerdo 4">
+            <img src="5.png" alt="Recuerdo 5">
+        </div>
+
+        <div class="container">
+            <div class="header">
+                <h1>Para mi linda Rocí</h1>
+                <p>[LUGAR Y FECHA, Ej: Caracas, 15 de Diciembre de 2025]</p>
+            </div>
+
+            <div class="saludo">
+                Amorcito,
+            </div>
+
+            <div class="cuerpo">
+                <p>
+                    Me parece increíble que ya hayan pasado tres maravillosas semanas de habernos conocido, de haber empezado esta pequeña gran aventura juntos. Parece que fue hace poco, pero a la vez, siento que te conozco de casi toda la vida. Tres semanas pueden parecer poco, pero para mí, cada día ha sido como un capítulo nuevo en esta maravillosa historia que tenemos juntos, historia que para mí es como el tesoro más preciado que tengo.
+                </p>
+                <p>
+                    Desde el momento en el que charlamos por primera vez sentí muchas cosas, entre ellas incertidumbre y nervios por no saber qué podría suceder, no sabía qué tipo de persona eras, pero con el tiempo, mientras seguimos conversando me dí cuenta de algo, me dí cuenta de lo muy especial que eres y la increíble persona la cual me encontré. Algunas de las cosas que me han mantenido enganchado este tiempo han sido lo increíblemente graciosa y divertida que eres, la forma en la que te expresas y tu cariño, que aunque ciertamente no lo sueles demostrar tanto, cuándo lo haces se convierte en un momento muy especial el cuál no voy a olvidar.
+                </p>
+                <p>
+                    Hay algo sobre estos días que jamás olvidaré, cuando estuve contigo el día en el que todo fue para mal con Celeste y empezaste a darme mucho cariño, de verdad no sabes lo muy feliz que me hizo sentir ese momento. O la vez cuando me dijiste "Y yo te aviso desde ahora, vos sos mi esclavo. No de alguien más, ni de tus amigos ni nada" Probablemente sea raro mencionarlo ahora, pero lo que quiero decir es que tienes algo muy encantador cuando te vuelves un poco posesiva.
+                </p>
+                <p>
+                    Gracias por haberme dado la oportunidad de pasar este tiempo contigo, estando para ti y aprendiendo más sobre ti, sobre la increíble mujer que me tiene tan enamorado. Contigo me siento inimaginablemente feliz y me siento muy emocionado por todo lo que nos espera. Espero celebrar muchas más semanas, meses y años a tu lado amándote, apoyándote y siempre estando para ti cuando más me necesites.
+                </p>
+                <p>
+                    Te amo como no puedes imaginar.
+                </p>
+            </div>
+
+            <div class="firma">
+                <p>Con todo mi amor,</p>
+                <p>galletón.</p>
+            </div>
+        </div>
+
+        <div class="sidebar right">
+            <img src="6.png" alt="Recuerdo 6">
+            <img src="7.png" alt="Recuerdo 7">
+            <img src="8.png" alt="Recuerdo 8">
+            <img src="9.png" alt="Recuerdo 9">
+            <img src="10.png" alt="Recuerdo 10">
+        </div>
+
+    </div>
+</body>
+</html>
