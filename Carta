@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi linda Rocí: 3 Semanas Juntos ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #ffe6f0 0%, #ffccdd 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        /* Contenedor principal */
+        .love-letter {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 2px solid #ff66a3;
+        }
+
+        /* Cabecera */
+        .header {
+            background: linear-gradient(135deg, #ff66a3 0%, #ff3385 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .header .date {
+            font-style: italic;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .heart {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Contenido principal */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .content-wrapper {
+                flex-direction: row;
+            }
+        }
+
+        /* Columna de fotos */
+        .photos-column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .photos-column {
+                max-width: 35%;
+            }
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 1;
+            background: #f8f8f8;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 102, 163, 0.9);
+            color: white;
+            padding: 6px 10px;
+            font-size: 0.85rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Columna de texto */
+        .text-column {
+            flex: 2;
+            padding: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .text-column {
+                padding: 20px;
+            }
+        }
+
+        .saludo {
+            color: #ff3385;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            border-bottom: 2px dashed #ffb3d9;
+            padding-bottom: 10px;
+        }
+
+        .letter-content {
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .letter-content p {
+            margin-bottom: 18px;
+            padding: 10px;
+            background: #fff9fb;
+            border-radius: 8px;
+            border-left: 3px solid #ff66a3;
+        }
+
+        .letter-content p:hover {
+            background: #fff0f5;
+            transition: background 0.3s ease;
+        }
+
+        /* Firma */
+        .signature {
+            margin-top: 30px;
+            text-align: right;
+            padding: 20px;
+            background: linear-gradient(to right, transparent, #fff0f5);
+            border-radius: 10px;
+        }
+
+        .signature .name {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2rem;
+            color: #ff3385;
+            margin-top: 10px;
+        }
+
+        .signature .date {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #ffebf3;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #ffccdd;
+        }
+
+        /* Loading states */
+        .loading {
+            position: relative;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Scroll personalizado */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffe6f0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff66a3;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff3385;
+        }
+    </style>
+</head>
+<body>
+    <div class="love-letter">
+        <!-- Cabecera -->
+        <div class="header">
+            <div class="heart">❤️</div>
+            <h1>Para mi linda Rocí</h1>
+            <div class="date">Caracas, Diciembre de 2025 - 3 semanas juntos</div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content-wrapper">
+            <!-- Columna de fotos (izquierda) -->
+            <div class="photos-column">
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1nZqkeRogHC-ua7r875TcGHj3qRbh5XOa" 
+                             alt="Nuestro recuerdo 1" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gMTwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 1</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1S8T4E7DRoIPqDbMzE8qwpItd9Bf2mtL1" 
+                             alt="Nuestro recuerdo 2" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gMjwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 2</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1fFMGeSHKz6P56JM2dKndCzKEBJZ263zF" 
+                             alt="Nuestro recuerdo 3" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gMzwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 3</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1-1jtem0XqQkppiDPaBpSvSwW1fn6yhdk" 
+                             alt="Nuestro recuerdo 4" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gNDwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 4</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1Xkr2StY4MxoByMU-a5fPwY3zXRNwyBBX" 
+                             alt="Nuestro recuerdo 5" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gNTwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 5</div>
+                    </div>
+                </div>
+                
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1E5cUZzuvDtQ2J5YXBcobDzDYB0zhz9BZ" 
+                             alt="Nuestro recuerdo 6" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gNjwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 6</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=199n3qiB_SObrhRnlbV1v61jmEyktZunZ" 
+                             alt="Nuestro recuerdo 7" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gNzwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 7</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1L6vE79px6HO6x3kfWspHOuGwpGiFCkGs" 
+                             alt="Nuestro recuerdo 8" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gODwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 8</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1TzhCwPhHmplCFb2XRUckxi-KExugCS7y" 
+                             alt="Nuestro recuerdo 9" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gOTwvdGV4tD48L3N2Zz4='">
+                        <div class="photo-label">Recuerdo 9</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://drive.google.com/uc?export=view&id=1qOkqHZEua52KkIHb3YuKB5HtDKIX_Fkb" 
+                             alt="Nuestro recuerdo 10" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjhGMUYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRjY2QTNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UmVjdWVyZG8gMTA8L3RleHQ+PC9zdmc+'; this.style.objectFit='contain'; this.style.padding='20px'">
+                        <div class="photo-label">Recuerdo 10</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna de texto (derecha) -->
+            <div class="text-column">
+                <div class="saludo">Amorcito,</div>
+                
+                <div class="letter-content">
+                    <p>
+                        Me parece increíble que ya hayan pasado tres maravillosas semanas de habernos conocido, de haber empezado esta pequeña gran aventura juntos. Parece que fue hace poco, pero a la vez, siento que te conozco de casi toda la vida. Tres semanas pueden parecer poco, pero para mí, cada día ha sido como un capítulo nuevo en esta maravillosa historia que tenemos juntos, historia que para mí es como el tesoro más preciado que tengo.
+                    </p>
+                    
+                    <p>
+                        Desde el momento en el que charlamos por primera vez sentí muchas cosas, entre ellas incertidumbre y nervios por no saber qué podría suceder, no sabía qué tipo de persona eras, pero con el tiempo, mientras seguimos conversando me dí cuenta de algo, me dí cuenta de lo muy especial que eres y la increíble persona la cual me encontré. Algunas de las cosas que me han mantenido enganchado este tiempo han sido lo increíblemente graciosa y divertida que eres, la forma en la que te expresas y tu cariño, que aunque ciertamente no lo sueles demostrar tanto, cuándo lo haces se convierte en un momento muy especial el cuál no voy a olvidar.
+                    </p>
+                    
+                    <p>
+                        Hay algo sobre estos días que jamás olvidaré, cuando estuve contigo el día en el que todo fue para mal con Celeste y empezaste a darme mucho cariño, de verdad no sabes lo muy feliz que me hizo sentir ese momento. O la vez cuando me dijiste "Y yo te aviso desde ahora, vos sos mi esclavo. No de alguien más, ni de tus amigos ni nada" Probablemente sea raro mencionarlo ahora, pero lo que quiero decir es que tienes algo muy encantador cuando te vuelves un poco posesiva.
+                    </p>
+                    
+                    <p>
+                        Gracias por haberme dado la oportunidad de pasar este tiempo contigo, estando para ti y aprendiendo más sobre ti, sobre la increíble mujer que me tiene tan enamorado. Contigo me siento inimaginablemente feliz y me siento muy emocionado por todo lo que nos espera. Espero celebrar muchas más semanas, meses y años a tu lado amándote, apoyándote y siempre estando para ti cuando más me necesites.
+                    </p>
+                    
+                    <p>
+                        Te amo como no puedes imaginar.
+                    </p>
+                </div>
+                
+                <div class="signature">
+                    <div>Con todo mi amor,</div>
+                    <div class="name">galletón</div>
+                    <div class="date">Diciembre 2025</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>Esta página contiene nuestros primeros 10 recuerdos juntos ❤️</div>
+            <div style="margin-top: 8px; font-size: 0.8rem; opacity: 0.7;">
+                Creado con mucho cariño para Rocí - 3 semanas de felicidad
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('💖 Carta de amor cargada para Rocí');
+            
+            // Agregar efecto de carga suave a las imágenes
+            const images = document.querySelectorAll('img');
+            let loadedCount = 0;
+            const totalImages = images.length;
+            
+            images.forEach(img => {
+                // Verificar si ya está cargada
+                if (img.complete) {
+                    loadedCount++;
+                    img.style.opacity = '1';
+                } else {
+                    // Cuando cargue
+                    img.addEventListener('load', function() {
+                        loadedCount++;
+                        this.style.opacity = '1';
+                        this.style.transition = 'opacity 0.5s ease';
+                        
+                        // Actualizar título cuando todas carguen
+                        if (loadedCount === totalImages) {
+                            document.title = "💖 Para mi linda Rocí - ¡Fotos cargadas!";
+                            console.log('✅ Todas las fotos cargadas');
+                        }
+                    });
+                    
+                    // Manejar errores
+                    img.addEventListener('error', function() {
+                        console.warn(`⚠️ No se pudo cargar: ${this.alt}`);
+                        this.style.border = '2px dashed #ff66a3';
+                        this.parentElement.style.backgroundColor = '#fff0f5';
+                    });
+                }
+                
+                // Efecto de zoom al hacer clic
+                img.addEventListener('click', function() {
+                    this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
+                    this.style.zIndex = this.style.zIndex === '100' ? '1' : '100';
+                    this.style.transition = 'transfo
